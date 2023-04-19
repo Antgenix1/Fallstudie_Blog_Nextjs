@@ -46,7 +46,7 @@ export default function PostForm({ session, postToEdit }) {
     }
 
     const handleSubmit = async (e) => {
-        // e.preventDefault()
+        e.preventDefault()
         setIsLoading(true)
         setErrors(defaultModel)
 
@@ -83,7 +83,7 @@ export default function PostForm({ session, postToEdit }) {
                 </fieldset>
                 <fieldset>
                     <label>Text:</label>
-                    <input type="text" name="text" value={post.text} onChange={handleChange}/>
+                    <textarea type="text" name="text" value={post.text} onChange={handleChange}/>
                     { errors.text && <div className={styles.error}>{errors.text}</div>}
                 </fieldset>
                 <button type="submit" className="button" onClick={sendBack}>Submit</button>
